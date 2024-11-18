@@ -2,4 +2,6 @@ function helloNPM() {
   return "hello NPM";
 }
 
-module.exports = helloNPM;
+import Test from "./components/test.astro";
+
+export { helloNPM, Test };

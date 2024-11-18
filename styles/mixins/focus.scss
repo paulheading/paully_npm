@@ -38,3 +38,8 @@
   position: relative;
   z-index: 2;
 }
+
+@mixin focus-link {
+  @include single-box(white, 0.375rem);
+  background-color: white;
+}

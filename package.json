@@ -6,12 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "exports": {
-    "./styles": "./dist/styles.scss",
-    "./vars": "./dist/vars.scss",
-    "./mixins": "./dist/mixins.scss",
-    "./functions": "./dist/functions.scss"
+    ".": "./index.js",
+    "./styles": "./styles/global.scss",
+    "./vars": "./styles/vars.scss",
+    "./mixins": "./styles/mixins.scss",
+    "./functions": "./styles/functions.scss"
   },
+  "files": [
+    "components",
+    "styles",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paulheading/paully_npm.git"
