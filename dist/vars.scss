@@ -1,2 +1,29 @@
+@import "vars/borders";
 @import "vars/breakpoints";
 @import "vars/colors";
+@import "vars/fonts";
+@import "vars/margins";
+
+$plusp: 1rem;
+
+$min-width-site: 20rem;
+
+$max-width-wrap: 62rem;
+
+$width-window: 16rem;
+
+$height-section: 32rem;
+
+$height-banner: 5.5rem;
+
+$box-shadow-window: 0 0 0.375rem rgba(black, 0.2);
+
+$box-shadow-page: 0 0 0.5rem #dee2e6;
+
+$gap-links: 1.5rem;
+
+$page-button-bump-sm: $padding-row * 0.625;
+
+$page-button-bump-lg: $padding-row * 0.75;
+
+$page-button-size: 2.125rem;
