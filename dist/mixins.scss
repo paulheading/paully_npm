@@ -1,7 +1,4 @@
-$breakpoint_lg: 1024;
-$breakpoint_md: 768;
-$breakpoint_sm: 520;
-$breakpoint_xs: 375;
+@import "vars";
 
 @mixin large-up {
   @media only screen and (min-width: #{$breakpoint_lg}px) {
