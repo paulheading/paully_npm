@@ -1,49 +1,6 @@
 @import "vars";
+@import "functions";
 
-@mixin large-up {
-  @media only screen and (min-width: #{$breakpoint_lg}px) {
-    @content;
-  }
-}
-
-@mixin large-down {
-  @media only screen and (max-width: #{$breakpoint_lg - 1}px) {
-    @content;
-  }
-}
-
-@mixin medium-up {
-  @media only screen and (min-width: #{$breakpoint_md}px) {
-    @content;
-  }
-}
-
-@mixin medium-down {
-  @media only screen and (max-width: #{$breakpoint_md - 1}px) {
-    @content;
-  }
-}
-
-@mixin small-up {
-  @media only screen and (min-width: #{$breakpoint_sm}px) {
-    @content;
-  }
-}
-
-@mixin small-down {
-  @media only screen and (max-width: #{$breakpoint_sm - 1}px) {
-    @content;
-  }
-}
-
-@mixin xsmall-up {
-  @media only screen and (min-width: #{$breakpoint_xs}px) {
-    @content;
-  }
-}
-
-@mixin xsmall-down {
-  @media only screen and (max-width: #{$breakpoint_xs - 1}px) {
-    @content;
-  }
-}
+@import "mixins/breakpoints.scss";
+@import "mixins/buttons.scss";
+@import "mixins/focus.scss";

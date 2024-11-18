@@ -9,7 +9,8 @@
   "exports": {
     "./styles": "./dist/styles.scss",
     "./vars": "./dist/vars.scss",
-    "./mixins": "./dist/mixins.scss"
+    "./mixins": "./dist/mixins.scss",
+    "./functions": "./dist/functions.scss"
   },
   "repository": {
     "type": "git",
