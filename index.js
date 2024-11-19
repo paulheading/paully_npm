@@ -1,7 +1,3 @@
-function helloNPM() {
-  return "hello NPM";
-}
+import Banner from "./components/banner.astro";
 
-import Test from "./components/test.astro";
-
-export { helloNPM, Test };
+export { Banner };

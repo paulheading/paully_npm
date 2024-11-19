@@ -43,3 +43,9 @@
   @include single-box(white, 0.375rem);
   background-color: white;
 }
+
+@mixin lemon-box {
+  @include single-box($c-lemon);
+  background-color: $c-lemon;
+  color: black;
+}
