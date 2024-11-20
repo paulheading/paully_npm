@@ -6,8 +6,8 @@ import OutlineButton from "./components/buttons/outline.astro";
 import OutlineLink from "./components/links/outline.astro";
 import Skiplink from "./components/skiplink.astro";
 
-import data from "./data/index";
-import helpers from "./scripts/helpers";
+import data from "./data/index.js";
+import helpers from "./scripts/helpers.js";
 
 export {
   BackLink,

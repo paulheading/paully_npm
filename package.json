@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/paulheading/paully_npm#readme",
   "dependencies": {
-    "color": "^4.2.3"
+    "color": "^4.2.3",
+    "node-fetch": "^3.3.2"
   }
 }

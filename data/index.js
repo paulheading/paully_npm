@@ -1,4 +1,4 @@
-import personal from "./personal";
-import seo from "./seo";
+import personal from "./personal.js";
+import seo from "./seo.js";
 
 export default { personal, seo };
