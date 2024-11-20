@@ -6,13 +6,8 @@ import OutlineButton from "./components/buttons/outline.astro";
 import OutlineLink from "./components/links/outline.astro";
 import Skiplink from "./components/skiplink.astro";
 
-import PersonalData from "./data/personal";
-import SeoData from "./data/seo";
-
-let data = {
-  personal: PersonalData,
-  seo: SeoData,
-};
+import data from "./data/index";
+import helpers from "./scripts/helpers";
 
 export {
   BackLink,
@@ -23,4 +18,5 @@ export {
   OutlineLink,
   Skiplink,
   data,
+  helpers,
 };
