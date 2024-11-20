@@ -25,4 +25,4 @@ get.rems = function (value = 1) {
   return String(value * 0.0625 + "rem");
 };
 
-export default get;
+export default { get };

@@ -1,5 +1,5 @@
 ---
-import { get } from "#helpers";
+import helpers from "#helpers";
 
 const { size = 20, href = "/resume", id, justify = "center" } = Astro.props;
 
@@ -14,9 +14,9 @@ const padding = size * 0.5;
 const radius = padding * 0.5;
 
 const vars = {
-  padding: get.rems(padding),
-  radius: get.rems(radius),
-  size: get.rems(size),
+  padding: helpers.get.rems(padding),
+  radius: helpers.get.rems(radius),
+  size: helpers.get.rems(size),
   justify,
 };
 ---

@@ -15,6 +15,7 @@
     "./functions": "./styles/functions.scss"
   },
   "imports": {
+    "#components": "./index.js",
     "#helpers": "./scripts/helpers.js"
   },
   "files": [
