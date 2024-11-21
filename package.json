@@ -14,17 +14,20 @@
     "./mixins": "./styles/mixins.scss",
     "./functions": "./styles/functions.scss",
     "./data": "./data/index.js",
-    "./helpers": "./scripts/helpers/index.js"
+    "./helpers": "./scripts/helpers/index.js",
+    "./svgs": "./svgs/index.js"
   },
   "imports": {
-    "#components": "./index.js",
+    "#components/*": "./components/*.astro",
+    "#svgs/*": "./svgs/*.astro",
     "#helpers": "./scripts/helpers/index.js"
   },
   "files": [
     "components",
     "data",
-    "styles",
     "scripts",
+    "styles",
+    "svgs",
     "index.js"
   ],
   "repository": {
