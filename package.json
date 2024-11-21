@@ -12,11 +12,13 @@
     "./styles": "./styles/global.scss",
     "./vars": "./styles/vars.scss",
     "./mixins": "./styles/mixins.scss",
-    "./functions": "./styles/functions.scss"
+    "./functions": "./styles/functions.scss",
+    "./data": "./data/index.js",
+    "./helpers": "./scripts/helpers/index.js"
   },
   "imports": {
     "#components": "./index.js",
-    "#helpers": "./scripts/helpers.js"
+    "#helpers": "./scripts/helpers/index.js"
   },
   "files": [
     "components",
@@ -41,6 +43,6 @@
   "homepage": "https://github.com/paulheading/paully_npm#readme",
   "dependencies": {
     "color": "^4.2.3",
-    "node-fetch": "^3.3.2"
+    "luxon": "^3.5.0"
   }
 }

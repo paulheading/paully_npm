@@ -1,5 +1,5 @@
 ---
-import helpers from "#helpers";
+import { get } from "#helpers";
 
 const { size = 20, align = "center", onClick, id } = Astro.props;
 
@@ -14,9 +14,9 @@ const padding = size * 0.5;
 const radius = padding * 0.5;
 
 const vars = {
-  padding: helpers.get.rems(padding),
-  radius: helpers.get.rems(radius),
-  size: helpers.get.rems(size),
+  padding: get.rems(padding),
+  radius: get.rems(radius),
+  size: get.rems(size),
   align,
 };
 ---
