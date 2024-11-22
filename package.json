@@ -20,7 +20,8 @@
   "imports": {
     "#components/*": "./components/*.astro",
     "#svgs/*": "./svgs/*.astro",
-    "#helpers": "./scripts/helpers/index.js"
+    "#helpers": "./scripts/helpers/index.js",
+    "#styles/*": "./styles/*.scss"
   },
   "files": [
     "components",
