@@ -9,27 +9,28 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./styles": "./styles/global.scss",
-    "./vars": "./styles/vars.scss",
-    "./mixins": "./styles/mixins.scss",
-    "./functions": "./styles/functions.scss",
     "./data": "./data/index.js",
+    "./functions": "./styles/functions.scss",
     "./helpers": "./scripts/helpers/index.js",
-    "./svgs": "./svgs/index.js"
+    "./mixins": "./styles/mixins.scss",
+    "./styles": "./styles/global.scss",
+    "./svgs": "./svgs/index.js",
+    "./vars": "./styles/vars.scss"
   },
   "imports": {
     "#components/*": "./components/*.astro",
-    "#svgs/*": "./svgs/*.astro",
     "#helpers": "./scripts/helpers/index.js",
-    "#styles/*": "./styles/*.scss"
+    "#styles/*": "./styles/*.scss",
+    "#svgs/*": "./svgs/*.astro"
   },
   "files": [
     "components",
     "data",
+    "index.js",
     "scripts",
     "styles",
     "svgs",
-    "index.js"
+    "test"
   ],
   "repository": {
     "type": "git",

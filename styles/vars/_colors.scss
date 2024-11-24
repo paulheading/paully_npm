@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $c-gray-1: #f8f9fa;
 $c-gray-2: #e9ecef;
 $c-gray-3: #dee2e6;
@@ -13,15 +15,15 @@ $c-indigo: #6610f2;
 $c-purple: #6f42c1;
 $c-pink: #e83e8c;
 $c-red: #dc3545;
-$c-darkred: darken($c-red, 10%);
+$c-darkred: color.adjust($c-red, $lightness: -10%);
 $c-orange: #fd7e14;
 $c-yellow: #ffc107;
 $c-green: #28a745;
 
 $c-teal: #20c997;
-$c-teal--dark: darken($c-teal, 10%);
-$c-teal--xdark: darken($c-teal, 20%);
-$c-teal--xxdark: darken($c-teal, 35%);
+$c-teal--dark: color.adjust($c-teal, $lightness: -10%);
+$c-teal--xdark: color.adjust($c-teal, $lightness: -20%);
+$c-teal--xxdark: color.adjust($c-teal, $lightness: -35%);
 
 $c-cyan: #17a2b8;
 $c-sky: #87cefa;
@@ -30,7 +32,7 @@ $c-lemon: lightgoldenrodyellow;
 $c-gold: #f5c356;
 
 $c-body-bg: $c-gray-2;
-$c-body-banner: darken($c-body-bg, 15%);
+$c-body-banner: color.adjust($c-body-bg, $lightness: -15%);
 
 $c-status-neutral-fade: hsl(205, 100%, 95%);
 $c-status-neutral-light: hsl(205, 100%, 75%);
@@ -43,3 +45,7 @@ $c-status-error: hsl(0, 45%, 37%);
 $c-status-success-fade: hsl(120, 30%, 95%);
 $c-status-success-light: hsl(120, 30%, 75%);
 $c-status-success: hsl(120, 30%, 37%);
+
+$color-code: #d0d0d0;
+
+$color-code--background: #181818;

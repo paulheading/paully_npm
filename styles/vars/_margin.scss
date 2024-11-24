@@ -1,0 +1,13 @@
+@use "padding" as *;
+
+$margin-button: $padding-row + 1.125rem;
+
+$margin-row: $padding-row * 1.5;
+
+$margin-paragraph: 1.25rem;
+
+$margin-blockquote: $margin-paragraph * 1.5;
+
+$page-button-bump-sm: $padding-row * 0.625;
+
+$page-button-bump-lg: $padding-row * 0.75;

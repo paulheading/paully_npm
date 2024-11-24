@@ -24,7 +24,7 @@ if (isOutline && !dark) {
 </div>
 
 <style lang="scss" define:vars={{ text, fill }}>
-  @import "#styles/mixins";
+  @use "#styles/mixins" as *;
 
   .label {
     border-radius: $border-radius-sm;

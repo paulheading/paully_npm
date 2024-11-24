@@ -1,6 +1,6 @@
-@import "mixins";
+@use "mixins" as *;
 
-@import "global/banner";
+@use "global/banner";
 
 * {
   box-sizing: border-box;
@@ -15,7 +15,6 @@ body {
   min-width: 20rem;
   color: black;
   margin: 0;
-
 
   &[data-state="hidden"] {
     background-color: black;
@@ -34,32 +33,50 @@ a {
 
 h1 {
   @include h-styles($h1-font-size * 0.5);
-  font-size: $h1-font-size;
+
+  & {
+    font-size: $h1-font-size;
+  }
 }
 
 h2 {
   @include h-styles;
-  font-size: $h2-font-size;
+
+  & {
+    font-size: $h2-font-size;
+  }
 }
 
 h3 {
   @include h-styles;
-  font-size: $h3-font-size;
+
+  & {
+    font-size: $h3-font-size;
+  }
 }
 
 h4 {
   @include h-styles;
-  font-size: $h4-font-size;
+
+  & {
+    font-size: $h4-font-size;
+  }
 }
 
 h5 {
   @include h-styles;
-  font-size: $h5-font-size;
+
+  & {
+    font-size: $h5-font-size;
+  }
 }
 
 h6 {
   @include h-styles;
-  font-size: $h6-font-size;
+
+  & {
+    font-size: $h6-font-size;
+  }
 }
 
 blockquote {
@@ -68,11 +85,14 @@ blockquote {
 
 p {
   @include child-margins;
-  word-wrap: break-word;
-  font-weight: 400;
 
-  >img {
-    border: 1px solid $c-body-bg;
+  & {
+    word-wrap: break-word;
+    font-weight: 400;
+
+    >img {
+      border: 1px solid $c-body-bg;
+    }
   }
 }
 

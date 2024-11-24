@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .banner-container .link {
   @include focus {
     @include lemon-box;
