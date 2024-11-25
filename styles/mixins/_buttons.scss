@@ -3,7 +3,7 @@
 @use "focus" as *;
 @use "size" as *;
 
-@mixin page-button($background: black, $foreground: white, $size: $page-button-size) {
+@mixin page-button($background: white, $foreground: black, $size: $page-button-size) {
   @include size($size);
 
   & {
@@ -17,6 +17,7 @@
     background-color: $background;
     border-color: $foreground;
     color: $foreground;
+    fill: currentColor;
   }
 
   &:disabled {
@@ -26,26 +27,21 @@
   svg {
     pointer-events: none;
     position: relative;
-    fill: $foreground;
   }
 
   @include focus {
     background-color: $foreground;
     border-color: $background;
     color: $background;
-
-    svg {
-      fill: $background;
-    }
   }
 }
 
 @mixin gallery-button {
-  @include page-button(white, black);
+  @include page-button(black, white);
 }
 
 @mixin trello-button {
-  @include page-button(white, black);
+  @include page-button;
 
   svg {
     @include medium-down {
