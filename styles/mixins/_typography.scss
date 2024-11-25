@@ -1,5 +1,9 @@
 @use "../vars" as *;
 @use "focus" as *;
+@use "typography/code" as *;
+
+@forward "typography/overflow";
+@forward "typography/code";
 
 @mixin child-margins($margin: $margin-paragraph) {
   margin: 0 0 $margin;
@@ -9,43 +13,12 @@
   }
 }
 
-@mixin code-setup {
-  background-color: $c-body-bg;
-  padding: $margin-paragraph;
-  display: block;
-  margin: 0;
-}
-
-@mixin code-styles {
-  @include code-setup;
-
-  & {
-    background-color: $color-code--background;
-    font-size: $font-size-caption;
-    color: $color-code;
-    line-height: 1.75;
-
-    &.hljs {
-      padding: $margin-paragraph;
-    }
-  }
-}
-
 @mixin list-styles {
   @include child-margins;
 
   & {
     padding-left: $margin-paragraph;
     font-weight: 400;
-  }
-}
-
-@mixin h-styles($margin: $margin-paragraph) {
-  @include child-margins($margin);
-
-  & {
-    font-family: $font-family-headings;
-    line-height: $line-height-sm;
   }
 }
 
@@ -74,5 +47,13 @@
       }
     }
   }
+}
 
+@mixin h-styles($margin: $margin-paragraph) {
+  @include child-margins($margin);
+
+  & {
+    font-family: $font-family-headings;
+    line-height: $line-height-sm;
+  }
 }
