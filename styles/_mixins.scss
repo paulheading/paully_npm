@@ -4,23 +4,11 @@
 @forward "mixins/breakpoints";
 @forward "mixins/buttons";
 @forward "mixins/focus";
+@forward "mixins/layouts";
 @forward "mixins/size";
 @forward "mixins/typography";
 
 @use "vars" as *;
-
-@mixin wrap {
-  max-width: $max-width-wrap;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@mixin inset {
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
-}
 
 @mixin flex-links {
   align-items: center;

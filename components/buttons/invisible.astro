@@ -1,0 +1,15 @@
+---
+let { className } = Astro.props;
+---
+
+<button class={className}>
+  <slot />
+</button>
+
+<style lang="scss">
+  @use "#styles/mixins" as *;
+
+  button {
+    @include invisible-button;
+  }
+</style>

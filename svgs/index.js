@@ -11,6 +11,7 @@ import Next from "#svgs/next";
 import Pause from "#svgs/pause";
 import Play from "#svgs/play";
 import Previous from "#svgs/previous";
+import Question from "#svgs/question";
 import Resume from "#svgs/resume";
 import Spotify from "#svgs/spotify";
 import Unmute from "#svgs/unmute";
@@ -37,6 +38,7 @@ export {
   Pause,
   Play,
   Previous,
+  Question,
   Resume,
   Spotify,
   Unmute,

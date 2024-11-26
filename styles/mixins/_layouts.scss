@@ -1,0 +1,21 @@
+@use "../vars" as *;
+
+@mixin center-block {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin wrap {
+  @include center-block;
+
+  & {
+    max-width: $max-width-wrap;
+  }
+}
+
+@mixin inset {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}

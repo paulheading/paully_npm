@@ -101,10 +101,10 @@
 
 @mixin invisible-button {
   @include core-button;
+  border: none;
 
   & {
     background-color: transparent;
-    border-color: transparent;
     color: inherit;
     padding: 0;
   }

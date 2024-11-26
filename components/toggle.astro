@@ -1,0 +1,62 @@
+---
+let { color } = Astro.props;
+---
+
+<label>
+  <input type="checkbox" />
+  <span class={color}></span>
+</label>
+
+<style lang="scss">
+  @use "#styles/mixins" as *;
+
+  label {
+    height: $height-switch;
+    display: inline-block;
+    width: $width-switch;
+    position: relative;
+  }
+
+  label input {
+    @include size(0);
+
+    & {
+      visibility: hidden;
+      margin: 0;
+    }
+  }
+
+  span {
+    @include inset;
+
+    & {
+      -webkit-transition: $transition-slider;
+      border-radius: $border-radius-slider;
+      transition: $transition-slider;
+      background-color: #ccc;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+
+  span:before {
+    @include size($size-slider);
+
+    & {
+      -webkit-transition: $transition-slider;
+      transition: $transition-slider;
+      background-color: white;
+      bottom: $offset-slider;
+      left: $offset-slider;
+      border-radius: 50%;
+      position: absolute;
+      content: "";
+    }
+  }
+
+  input:checked + span:before {
+    -webkit-transform: translateX($size-slider);
+    -ms-transform: translateX($size-slider);
+    transform: translateX($size-slider);
+  }
+</style>

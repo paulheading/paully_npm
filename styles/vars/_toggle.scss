@@ -1,0 +1,11 @@
+  $height-switch: 2rem;
+
+  $width-switch: 3.5rem;
+
+  $border-radius-slider: $height-switch;
+
+  $transition-slider: 200ms;
+
+  $offset-slider: 0.25rem;
+
+  $size-slider: $height-switch - ($offset-slider * 2);
