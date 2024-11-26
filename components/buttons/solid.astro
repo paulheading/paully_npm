@@ -21,24 +21,19 @@ let vars = {
 ---
 
 <button {...props}>
-  <slot name="icon" />
-  <div class="content">
-    <slot />
-  </div>
-  <slot name="count" />
+  <slot />
 </button>
 
 <style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
 
-  $outline-button--defaults: white, black, var(--radius), var(--padding);
+  $outline-button--defaults: black, white, var(--radius), var(--padding);
 
   .button {
-    @include outline-button($outline-button--defaults...);
+    @include solid-button($outline-button--defaults...);
 
     & {
       font-size: var(--size);
-      gap: var(--padding);
     }
   }
 </style>

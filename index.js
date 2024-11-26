@@ -6,6 +6,7 @@ import Loader from "#components/loader";
 import OutlineButton from "#components/buttons/outline";
 import OutlineLink from "#components/links/outline";
 import Skiplink from "#components/skiplink";
+import SolidButton from "#components/buttons/solid";
 
 export {
   BackLink,
@@ -16,4 +17,5 @@ export {
   OutlineButton,
   OutlineLink,
   Skiplink,
+  SolidButton,
 };

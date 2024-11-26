@@ -1,12 +1,20 @@
-<div class="loader" data-state="not-loaded">
-  <div class="loader-wrap">
-    <div class="loader-icon"></div>
-    <div class="loader-icon"></div>
-    <div class="loader-icon"></div>
-    <div class="loader-icon"></div>
-    <div class="loader-icon"></div>
-    <div class="loader-icon"></div>
-  </div>
+---
+let { className, style } = Astro.props;
+
+let props = {
+  "class:list": ["loader", className],
+  "data-state": "not-loaded",
+  style,
+};
+---
+
+<div {...props}>
+  <div class="loader-icon"></div>
+  <div class="loader-icon"></div>
+  <div class="loader-icon"></div>
+  <div class="loader-icon"></div>
+  <div class="loader-icon"></div>
+  <div class="loader-icon"></div>
 </div>
 
 <style lang="scss">
@@ -26,17 +34,13 @@
   }
 
   .loader {
-    position: absolute;
+    padding: toRem(4);
+    height: toRem(52);
+    width: toRem(170);
 
     &[data-state="loaded"] {
       display: none;
     }
-  }
-
-  .loader-wrap {
-    padding: toRem(4);
-    height: toRem(52);
-    width: toRem(170);
   }
 
   .loader-icon {

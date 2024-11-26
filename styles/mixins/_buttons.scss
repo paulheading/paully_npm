@@ -3,41 +3,90 @@
 @use "focus" as *;
 @use "size" as *;
 
-@mixin page-button($background: white, $foreground: black, $size: $page-button-size) {
-  @include size($size);
+@mixin core-button {
+  font-size: inherit;
+  border: 1px solid;
+  cursor: pointer;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+@mixin solid-button($background-color: black, $color: white, $border-radius: 50%, $padding: 0.375rem) {
+  @include core-button;
 
   & {
+    background-color: $background-color;
+    border-radius: $border-radius;
     justify-content: center;
+    border-color: $color;
     display: inline-flex;
     align-items: center;
-    border-radius: 50%;
-    padding: 0.375rem;
-    border: 1px solid;
-    cursor: pointer;
-    background-color: $background;
-    border-color: $foreground;
-    color: $foreground;
     fill: currentColor;
+    padding: $padding;
+    color: $color;
   }
 
   &:disabled {
     visibility: hidden;
   }
 
+  &:active {
+    transform: scale(0.95);
+  }
+
   svg {
-    pointer-events: none;
     position: relative;
   }
 
   @include focus {
-    background-color: $foreground;
-    border-color: $background;
-    color: $background;
+    @include double-box;
   }
 }
 
+@mixin outline-button($background-color: white, $color: black, $border-radius: 50%, $padding: 0.375rem) {
+  @include core-button;
+
+  & {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    justify-content: center;
+    border-color: $color;
+    display: inline-flex;
+    align-items: center;
+    fill: currentColor;
+    padding: $padding;
+    color: $color;
+  }
+
+  &:disabled {
+    visibility: hidden;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  svg {
+    position: relative;
+  }
+
+  @include focus {
+    border-color: $background-color;
+    background-color: $color;
+    color: $background-color;
+  }
+}
+
+@mixin page-button {
+  @include outline-button($page-button--defaults...);
+  @include size($page-button-size);
+}
+
 @mixin gallery-button {
-  @include page-button(black, white);
+  @include outline-button($gallery-button--defaults...);
+  @include size($page-button-size);
 }
 
 @mixin trello-button {
@@ -51,14 +100,12 @@
 }
 
 @mixin invisible-button {
-  background-color: transparent;
-  font-size: inherit;
-  cursor: pointer;
-  color: inherit;
-  border: none;
-  padding: 0;
+  @include core-button;
 
-  * {
-    pointer-events: none;
+  & {
+    background-color: transparent;
+    border-color: transparent;
+    color: inherit;
+    padding: 0;
   }
 }
