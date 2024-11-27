@@ -1,8 +1,13 @@
 ---
-let { className } = Astro.props;
+let { className, style } = Astro.props;
+
+let props = {
+  class: className,
+  style,
+};
 ---
 
-<button class={className}>
+<button {...props}>
   <slot />
 </button>
 

@@ -1,11 +1,21 @@
 ---
-let { className, style } = Astro.props;
+let {
+  className,
+  style,
+  colors = {
+    dark: "#343a40",
+    medium: "#6c757d",
+    light: "#e9ecef",
+  },
+} = Astro.props;
 
 let props = {
   "class:list": ["loader", className],
   "data-state": "not-loaded",
   style,
 };
+
+let vars = { ...colors };
 ---
 
 <div {...props}>
@@ -17,7 +27,7 @@ let props = {
   <div class="loader-icon"></div>
 </div>
 
-<style lang="scss">
+<style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
 
   $offset: 0.875rem;
@@ -54,13 +64,13 @@ let props = {
 
     &:before {
       @include loading-icon;
-      background-color: $c-gray-6;
+      background-color: var(--dark);
       animation: animation-before $animation-setup;
     }
 
     &:after {
       @include loading-icon;
-      background-color: $c-gray-4;
+      background-color: var(--medium);
       animation: animation-after $animation-setup;
     }
 
@@ -103,7 +113,7 @@ let props = {
       z-index: 1;
     }
     25% {
-      background-color: $c-gray-2;
+      background-color: var(--light);
       transform: scale(0.75);
       z-index: 1;
     }

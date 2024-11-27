@@ -1,13 +1,19 @@
 ---
-let { color } = Astro.props;
+let {
+  backgroundColorChecked = "red",
+  backgroundColor = "#ccc",
+  color = "white",
+} = Astro.props;
+
+let vars = { backgroundColorChecked, backgroundColor, color };
 ---
 
 <label>
   <input type="checkbox" />
-  <span class={color}></span>
+  <span></span>
 </label>
 
-<style lang="scss">
+<style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
 
   label {
@@ -18,11 +24,19 @@ let { color } = Astro.props;
   }
 
   label input {
-    @include size(0);
+    @include inset;
 
     & {
-      visibility: hidden;
+      border-radius: $border-radius-slider;
+      height: $height-switch;
+      width: $width-switch;
+      position: absolute;
       margin: 0;
+    }
+
+    @include focus {
+      outline: 0.1875rem solid var(--backgroundColor);
+      outline-offset: 0.25rem;
     }
   }
 
@@ -30,10 +44,10 @@ let { color } = Astro.props;
     @include inset;
 
     & {
+      background-color: var(--backgroundColor);
       -webkit-transition: $transition-slider;
       border-radius: $border-radius-slider;
       transition: $transition-slider;
-      background-color: #ccc;
       position: absolute;
       cursor: pointer;
     }
@@ -44,14 +58,18 @@ let { color } = Astro.props;
 
     & {
       -webkit-transition: $transition-slider;
+      background-color: var(--color);
       transition: $transition-slider;
-      background-color: white;
       bottom: $offset-slider;
       left: $offset-slider;
       border-radius: 50%;
       position: absolute;
       content: "";
     }
+  }
+
+  input:checked + span {
+    background-color: var(--backgroundColorChecked);
   }
 
   input:checked + span:before {

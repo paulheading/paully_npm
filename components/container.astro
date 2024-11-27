@@ -1,0 +1,35 @@
+---
+let {
+  className,
+  bottom = "2rem",
+  right = "2rem",
+  left = "2rem",
+  top = "2rem",
+} = Astro.props;
+
+let props = {
+  "class:list": ["container", className],
+};
+
+let vars = {
+  bottom,
+  right,
+  left,
+  top,
+};
+---
+
+<div {...props}>
+  <slot />
+</div>
+
+<style lang="scss" define:vars={vars}>
+  @use "#styles/mixins" as *;
+
+  .container {
+    padding-bottom: var(--bottom);
+    padding-right: var(--right);
+    padding-left: var(--left);
+    padding-top: var(--top);
+  }
+</style>
