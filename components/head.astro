@@ -1,0 +1,31 @@
+---
+import { favicon } from "#assets";
+import { personal, seo } from "#data";
+
+const { title, keywords, description } = Astro.props;
+
+const faviconProps = {
+  type: "image/svg+xml",
+  href: favicon.src,
+  rel: "icon",
+};
+
+const themeProps = {
+  name: "theme-color",
+  content: "black",
+};
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <link {...faviconProps} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="author" content={personal.name} />
+  <title>{title ? title : seo.title("Portfolio")}</title>
+  {description && <meta name="description" content={description} />}
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta {...themeProps} />
+  <slot />
+</head>

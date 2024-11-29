@@ -1,3 +1,5 @@
+@use "heights" as *;
+
 $border-banner-width: 0.25rem;
 
 $border-banner: $border-banner-width solid black;
@@ -7,3 +9,7 @@ $border-dashed: 0.125rem dashed #dee2e6;
 $border-radius-sm: 0.25rem;
 
 $border-radius-lg: $border-radius-sm * 2;
+
+$border-radius-card: 0.75rem;
+
+$border-radius-slider: $height-switch;

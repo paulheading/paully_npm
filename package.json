@@ -19,7 +19,9 @@
     "./vars": "./styles/vars.scss"
   },
   "imports": {
+    "#assets": "./assets/index.js",
     "#components/*": "./components/*.astro",
+    "#data": "./data/index.js",
     "#helpers": "./scripts/helpers/index.js",
     "#styles/*": "./styles/*.scss",
     "#svgs/*": "./svgs/*.astro"

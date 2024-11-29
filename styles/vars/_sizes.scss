@@ -1,0 +1,10 @@
+@use "heights" as *;
+@use "other" as *;
+
+$size-card-profile: 6.25rem;
+
+$size-card-info: 1.875rem;
+
+$size-slider: $height-switch - ($offset-slider * 2);
+
+$size-page-button: 2.125rem;
