@@ -14,9 +14,9 @@
 
   & {
     background-color: $background-color;
+    border-color: $background-color;
     border-radius: $border-radius;
     justify-content: center;
-    border-color: $color;
     display: inline-flex;
     align-items: center;
     fill: currentColor;
@@ -37,52 +37,61 @@
   }
 
   @include focus {
-    @include double-box;
+    @include double-box($background-color);
   }
 }
 
-@mixin outline-button($background-color: white, $color: black, $border-radius: 50%, $padding: 0.375rem) {
-  @include core-button;
-
-  & {
-    background-color: $background-color;
-    border-radius: $border-radius;
-    justify-content: center;
-    border-color: $color;
-    display: inline-flex;
-    align-items: center;
-    fill: currentColor;
-    padding: $padding;
-    color: $color;
-  }
-
-  &:disabled {
-    visibility: hidden;
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-
-  svg {
-    position: relative;
-  }
+@mixin focus-color-switch($background-color, $color) {
+  background-color: $background-color;
+  border-color: currentColor;
+  fill: currentColor;
+  color: $color;
 
   @include focus {
-    border-color: $background-color;
     background-color: $color;
     color: $background-color;
   }
 }
 
+@mixin outline-button($background-color: white, $color: black, $border-radius: 50%, $padding: 0.375rem) {
+  @include core-button;
+  @include focus-color-switch($background-color, $color);
+
+  & {
+    border-radius: $border-radius;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    padding: $padding;
+  }
+
+  &:disabled {
+    visibility: hidden;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  svg {
+    position: relative;
+  }
+}
+
 @mixin page-button {
   @include outline-button($page-button--defaults...);
-  @include size($page-button-size);
+
+  & {
+    @include size($size-page-button);
+  }
 }
 
 @mixin gallery-button {
   @include outline-button($gallery-button--defaults...);
-  @include size($page-button-size);
+
+  & {
+    @include size($size-page-button);
+  }
 }
 
 @mixin trello-button {

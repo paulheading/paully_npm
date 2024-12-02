@@ -28,48 +28,62 @@
   }
 }
 
-@mixin double-box($bg: white,
-  $col: black,
-  $bg_size: 0.25rem,
-  $col_size: 0.15rem) {
-  box-shadow: 0 0 0 $bg_size $bg, 0 0 0 ($bg_size + $col_size) $col;
+@mixin single-box($color: white, $size: 0.25rem) {
+  outline: $size solid $color;
   position: relative;
   z-index: 2;
 }
 
-@mixin single-box($bg: white, $size: 0.25rem) {
-  box-shadow: 0 0 0 $size $bg;
-  position: relative;
-  z-index: 2;
+@mixin double-box($color: black, $size: 0.1875rem, $offset: 0.1875rem) {
+  @include single-box($color, $size);
+
+  & {
+    outline-offset: $offset;
+  }
 }
 
 @mixin focus-link {
   @include single-box(white, 0.375rem);
-  background-color: white;
+
+  & {
+    background-color: white;
+  }
 }
 
 @mixin lemon-box {
   @include single-box($c-lemon);
-  background-color: $c-lemon;
-  color: black;
+
+  & {
+    background-color: $c-lemon;
+    color: black;
+  }
 }
 
 @mixin white-box {
   @include single-box(white);
-  background-color: white;
-  color: black;
+
+  & {
+    background-color: white;
+    color: black;
+  }
 }
 
 @mixin gold-box {
   @include single-box($c-gold);
-  background-color: $c-gold;
-  color: black;
+
+  & {
+    background-color: $c-gold;
+    color: black;
+  }
 }
 
 @mixin focus-about($a, $b) {
   @include single-box($a);
-  background-color: $b;
-  color: $a;
+
+  & {
+    background-color: $b;
+    color: $a;
+  }
 }
 
 @mixin focus-resume {

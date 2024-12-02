@@ -1,0 +1,29 @@
+---
+import WindowOuter from "#components/window/outer";
+import WindowInner from "#components/window/inner";
+import Header from "#components/window/spotify/header";
+import Main from "#components/window/spotify/main";
+
+const { name } = Astro.props;
+---
+
+<WindowOuter {...Astro.props} class="outer">
+  <WindowInner class="inner">
+    <Header year={name} />
+    <Main year={name} />
+  </WindowInner>
+</WindowOuter>
+
+<style lang="scss">
+  @use "#styles/mixins" as *;
+
+  .outer {
+    left: toRem(64);
+    top: toRem(32);
+  }
+
+  .inner {
+    background-color: black;
+    color: white;
+  }
+</style>

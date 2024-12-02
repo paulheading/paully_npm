@@ -15,6 +15,15 @@ import SolidButton from "#components/buttons/solid";
 import Toggle from "#components/toggle";
 import Wrap from "#components/wrap";
 
+import WindowInner from "#components/window/inner";
+import WindowOuter from "#components/window/outer";
+import WindowTopbar from "#components/window/topbar";
+
+import SpotifyWindow from "#components/window/spotify";
+import SpotifyHeader from "#components/window/spotify/header";
+import SpotifyMain from "#components/window/spotify/main";
+import SpotifyTrack from "#components/window/spotify/track";
+
 export {
   BackLink,
   Banner,
@@ -30,6 +39,13 @@ export {
   OutlineLink,
   Skiplink,
   SolidButton,
+  SpotifyWindow,
+  SpotifyHeader,
+  SpotifyMain,
+  SpotifyTrack,
   Toggle,
   Wrap,
+  WindowInner,
+  WindowOuter,
+  WindowTopbar,
 };
