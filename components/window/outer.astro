@@ -1,18 +1,18 @@
 ---
 import Skiplink from "#components/skiplink";
 
-const { name, open, label, class: className, style = {}, width } = Astro.props;
+let { settings, className, style = {}, width } = Astro.props;
 
 const outerProps = {
   "class:list": ["outer-window", className],
-  "data-label": label,
-  "data-name": name,
+  "data-label": settings.label,
+  "data-name": settings.name,
   style,
 };
 
 if (width) outerProps.style.width = width;
 
-if (!open) {
+if (!settings.open) {
   outerProps.style.visibility = "hidden";
   outerProps.style.opacity = 0;
   outerProps.style.scale = 0.5;
@@ -28,7 +28,7 @@ if (!open) {
   @use "#styles/mixins" as *;
 
   .outer-window {
-    position: absolute;
+    position: relative;
     width: 16rem;
   }
 </style>

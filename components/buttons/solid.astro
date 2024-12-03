@@ -1,7 +1,16 @@
 ---
 import { get } from "#helpers";
 
-let { className, size = 20, onClick, id } = Astro.props;
+let {
+  className,
+  backgroundColor = "black",
+  color = "white",
+  size = 20,
+  padding = size * 0.5,
+  radius = padding * 0.5,
+  onClick,
+  id,
+} = Astro.props;
 
 let props = {
   "class:list": ["button", className],
@@ -9,14 +18,12 @@ let props = {
   id,
 };
 
-let padding = size * 0.5;
-
-let radius = padding * 0.5;
-
 let vars = {
   padding: get.rems(padding),
   radius: get.rems(radius),
   size: get.rems(size),
+  backgroundColor,
+  color,
 };
 ---
 
@@ -27,7 +34,8 @@ let vars = {
 <style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
 
-  $outline-button--defaults: black, white, var(--radius), var(--padding);
+  $outline-button--defaults: var(--backgroundColor), var(--color), var(--radius),
+    var(--padding);
 
   .button {
     @include solid-button($outline-button--defaults...);

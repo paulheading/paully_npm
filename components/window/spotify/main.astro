@@ -1,21 +1,18 @@
 ---
-import { spotify } from "~data/layout.json";
 import Track from "#components/window/spotify/track";
 
-const { year } = Astro.props;
-
-const { tracks, url } = spotify["_" + year];
+let { tracks, url } = Astro.props;
 ---
 
 <main>
   {
     tracks.map(function (track, index) {
-      const trackProps = {
+      let props = {
         number: index + 1,
         track,
         url,
       };
-      return <Track {...trackProps} />;
+      return <Track {...props} />;
     })
   }
 </main>

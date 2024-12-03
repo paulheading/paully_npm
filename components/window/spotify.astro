@@ -4,13 +4,28 @@ import WindowInner from "#components/window/inner";
 import Header from "#components/window/spotify/header";
 import Main from "#components/window/spotify/main";
 
-const { name } = Astro.props;
+let { settings, content } = Astro.props;
+
+let outerProps = {
+  className: "outer",
+  settings,
+};
+
+let headerProps = {
+  year: settings.name,
+  content,
+};
+
+let mainProps = {
+  tracks: content.tracks,
+  url: content.url,
+};
 ---
 
-<WindowOuter {...Astro.props} class="outer">
-  <WindowInner class="inner">
-    <Header year={name} />
-    <Main year={name} />
+<WindowOuter {...outerProps}>
+  <WindowInner className="inner">
+    <Header {...headerProps} />
+    <Main {...mainProps} />
   </WindowInner>
 </WindowOuter>
 

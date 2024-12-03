@@ -1,23 +1,18 @@
 ---
 import { Image } from "astro:assets";
-import { spotify } from "~data/layout.json";
-import { Spotify as Logo } from "paully/svgs";
+import Logo from "#svgs/spotify";
 
-const { year } = Astro.props;
-
-const { name, owner, url, thumbnail } = spotify["_" + year];
-
-const alt = `Artwork for my ${year} playlist.`;
+let { year, content } = Astro.props;
 
 const size = 80;
 
-const imageProps = {
-  src: thumbnail,
+let imageProps = {
+  alt: `Artwork for my ${year} playlist.`,
+  src: content.thumbnail,
   format: "webp",
   class: "image",
   height: size,
   width: size,
-  alt,
 };
 ---
 
@@ -26,10 +21,18 @@ const imageProps = {
   <div class="wrap-details">
     <div class="details">
       <div class="wrap-name">
-        <a href={url} class="name">{name}</a>
+        {
+          content.url ? (
+            <a href={content.url} class="name">
+              {content.name}
+            </a>
+          ) : (
+            <span class="name">{content.name}</span>
+          )
+        }
       </div>
       <div class="wrap-owner">
-        <a href={owner.url} class="owner">{owner.name}</a>
+        <a href={content.owner.url} class="owner">{content.owner.name}</a>
       </div>
     </div>
     <div class="wrap-logo">
@@ -42,7 +45,7 @@ const imageProps = {
   @use "#styles/mixins" as *;
 
   header {
-    grid-template-columns: 5rem auto;
+    grid-template-columns: toRem(80) toRem(176);
     background-color: #222b1b;
     display: grid;
   }
@@ -53,15 +56,18 @@ const imageProps = {
   }
 
   .wrap-details {
-    grid-template-columns: auto 2.25rem;
-    padding-left: 0.3125rem;
-    padding-top: 0.3125rem;
+    grid-template-columns: toRem(132) toRem(24);
+    padding: toRem(6);
+    gap: toRem(6);
     display: grid;
   }
 
-  .logo {
-    margin-right: 0.75rem;
-    margin-top: 0.4375rem;
+  .details {
+    text-align: left;
+  }
+
+  .wrap-logo {
+    padding-top: toRem(4);
   }
 
   .wrap-name {
