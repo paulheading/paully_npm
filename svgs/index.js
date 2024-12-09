@@ -1,5 +1,6 @@
 import About from "#svgs/about";
 import Back from "#svgs/back";
+import Check from "#svgs/check";
 import Close from "#svgs/close";
 import Confetti from "#svgs/confetti";
 import Dots from "#svgs/dots";
@@ -27,6 +28,7 @@ import ClosedFolder from "#svgs/folder/closed";
 export {
   About,
   Back,
+  Check,
   Close,
   Confetti,
   Dots,

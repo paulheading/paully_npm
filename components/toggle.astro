@@ -2,19 +2,30 @@
 let {
   backgroundColorChecked = "red",
   backgroundColor = "#ccc",
+  checked = false,
   color = "white",
+  className,
 } = Astro.props;
 
 let vars = { backgroundColorChecked, backgroundColor, color };
+
+let props = {
+  type: "checkbox",
+  checked,
+};
 ---
 
-<label>
-  <input type="checkbox" />
+<label class={className}>
+  <input {...props} />
   <span></span>
 </label>
 
 <style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
+
+  @mixin outline($color) {
+    outline: 0.1875rem solid $color;
+  }
 
   label {
     height: $height-switch;
@@ -23,10 +34,62 @@ let vars = { backgroundColorChecked, backgroundColor, color };
     position: relative;
   }
 
+  label.selected-state {
+    span {
+      background-color: var(--color);
+    }
+
+    span:before {
+      background-color: #2aa847;
+    }
+
+    input {
+      @include focus {
+        @include outline(var(--color));
+      }
+    }
+
+    input:checked + span {
+      background-color: var(--color);
+    }
+
+    input:checked + span:before {
+      background-color: var(--backgroundColorChecked);
+    }
+  }
+
+  label:not(.selected-state) {
+    span {
+      background-color: var(--backgroundColor);
+    }
+
+    span:before {
+      background-color: var(--color);
+    }
+
+    input:not(:checked) {
+      @include focus {
+        @include outline(var(--backgroundColor));
+      }
+    }
+
+    input:checked {
+      @include focus {
+        @include outline(var(--backgroundColorChecked));
+      }
+    }
+
+    input:checked + span {
+      background-color: var(--backgroundColorChecked);
+    }
+  }
+
   label input {
     @include inset;
 
     & {
+      -webkit-transition: $transition-outline-color;
+      transition: $transition-outline-color;
       border-radius: $border-radius-slider;
       height: $height-switch;
       width: $width-switch;
@@ -35,7 +98,6 @@ let vars = { backgroundColorChecked, backgroundColor, color };
     }
 
     @include focus {
-      outline: 0.1875rem solid var(--backgroundColor);
       outline-offset: 0.25rem;
     }
   }
@@ -44,7 +106,6 @@ let vars = { backgroundColorChecked, backgroundColor, color };
     @include inset;
 
     & {
-      background-color: var(--backgroundColor);
       -webkit-transition: $transition-slider;
       border-radius: $border-radius-slider;
       transition: $transition-slider;
@@ -58,7 +119,6 @@ let vars = { backgroundColorChecked, backgroundColor, color };
 
     & {
       -webkit-transition: $transition-slider;
-      background-color: var(--color);
       transition: $transition-slider;
       bottom: $offset-slider;
       left: $offset-slider;
@@ -66,10 +126,6 @@ let vars = { backgroundColorChecked, backgroundColor, color };
       position: absolute;
       content: "";
     }
-  }
-
-  input:checked + span {
-    background-color: var(--backgroundColorChecked);
   }
 
   input:checked + span:before {
