@@ -1,4 +1,8 @@
-<div class="banner-container">
+---
+let { className } = Astro.props;
+---
+
+<div class:list={["banner-container", className]}>
   <slot />
 </div>
 
