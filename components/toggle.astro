@@ -1,20 +1,18 @@
 ---
 let {
-  color = {
-    background: "grey",
-    foreground: "white",
-    checked: "green",
-    unchecked: "red",
-  },
+  color_background = "grey",
+  color_foreground = "white",
+  color_checked = "green",
+  color_unchecked = "red",
   checked = false,
   className,
 } = Astro.props;
 
 let vars = {
-  background: color.background,
-  foreground: color.foreground,
-  unchecked: color.unchecked,
-  checked: color.checked,
+  color_background,
+  color_foreground,
+  color_unchecked,
+  color_checked,
 };
 
 let props = {
@@ -44,51 +42,51 @@ let props = {
 
   label.selected-state {
     span {
-      background-color: var(--foreground);
+      background-color: var(--color_foreground);
     }
 
     span:before {
-      background-color: var(--unchecked);
+      background-color: var(--color_unchecked);
     }
 
     input {
       @include focus {
-        @include outline(var(--foreground));
+        @include outline(var(--color_foreground));
       }
     }
 
     input:checked + span {
-      background-color: var(--foreground);
+      background-color: var(--color_foreground);
     }
 
     input:checked + span:before {
-      background-color: var(--checked);
+      background-color: var(--color_checked);
     }
   }
 
   label:not(.selected-state) {
     span {
-      background-color: var(--background);
+      background-color: var(--color_background);
     }
 
     span:before {
-      background-color: var(--foreground);
+      background-color: var(--color_foreground);
     }
 
     input:not(:checked) {
       @include focus {
-        @include outline(var(--background));
+        @include outline(var(--color_background));
       }
     }
 
     input:checked {
       @include focus {
-        @include outline(var(--checked));
+        @include outline(var(--color_checked));
       }
     }
 
     input:checked + span {
-      background-color: var(--checked);
+      background-color: var(--color_checked);
     }
   }
 
