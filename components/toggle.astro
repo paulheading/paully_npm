@@ -31,10 +31,6 @@ let props = {
 <style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
 
-  @mixin outline($color) {
-    outline: 0.1875rem solid $color;
-  }
-
   $colors: (
     "blue": $c-blue,
     "cyan": $c-cyan,
@@ -62,7 +58,7 @@ let props = {
 
     input {
       @include focus {
-        @include outline(var(--color_foreground));
+        @include dashed-box(var(--color_foreground));
       }
     }
 
@@ -86,13 +82,13 @@ let props = {
 
     input:not(:checked) {
       @include focus {
-        @include outline(var(--color_background));
+        @include dashed-box(var(--color_background));
       }
     }
 
     input:checked {
       @include focus {
-        @include outline(var(--color_checked));
+        @include dashed-box(var(--color_checked));
       }
     }
 
@@ -104,7 +100,7 @@ let props = {
       input[color="#{$name}"] {
         &:checked {
           @include focus {
-            @include outline($value);
+            @include dashed-box($value);
           }
 
           + span {
@@ -119,17 +115,11 @@ let props = {
     @include inset;
 
     & {
-      -webkit-transition: $transition-outline-color;
-      transition: $transition-outline-color;
       border-radius: $border-radius-slider;
       height: $height-switch;
       width: $width-switch;
       position: absolute;
       margin: 0;
-    }
-
-    @include focus {
-      outline-offset: 0.25rem;
     }
   }
 

@@ -37,19 +37,19 @@
   }
 
   @include focus {
-    @include double-box($background-color);
+    @include dashed-box($background-color)
   }
 }
 
 @mixin focus-color-switch($background-color, $color) {
   background-color: $background-color;
-  border-color: currentColor;
   fill: currentColor;
   color: $color;
 
   @include focus {
     background-color: $color;
     color: $background-color;
+    outline: none;
   }
 }
 

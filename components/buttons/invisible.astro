@@ -1,8 +1,9 @@
 ---
-let { className, style, data } = Astro.props;
+let { className, style, data, disabled } = Astro.props;
 
 let props = {
   class: className,
+  disabled,
   style,
   data,
 };

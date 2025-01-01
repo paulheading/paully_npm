@@ -6,7 +6,7 @@
   }
 }
 
-@mixin focus($outline: false) {
+@mixin focus {
   @media (hover: hover) {
     &:hover {
       @content;
@@ -20,12 +20,11 @@
   @include focus-visible {
     @content;
   }
+}
 
-  @if not ($outline) {
-    & {
-      outline: rgba(0, 0, 0, 0);
-    }
-  }
+@mixin dashed-box($color: black, $offset: 4px, $weight: 2px) {
+  outline: $weight dashed $color;
+  outline-offset: $offset;
 }
 
 @mixin single-box($color: white, $size: 0.25rem) {
