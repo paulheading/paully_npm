@@ -20,9 +20,10 @@
   },
   "imports": {
     "#assets": "./assets/index.js",
-    "#components/*": "./components/*.astro",
-    "#data": "./data/index.js",
+    "#svgs": "./svgs/index.js",
     "#helpers": "./scripts/helpers/index.js",
+    "#data": "./data/index.js",
+    "#components/*": "./components/*.astro",
     "#styles/*": "./styles/*.scss",
     "#svgs/*": "./svgs/*.astro"
   },

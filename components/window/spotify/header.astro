@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "#svgs/spotify";
+import { Spotify, Refresh } from "#svgs";
 
 let { year, content } = Astro.props;
 
@@ -10,14 +10,18 @@ let imageProps = {
   alt: `Artwork for my ${year} playlist.`,
   src: content.thumbnail,
   format: "webp",
-  class: "image",
   height: size,
   width: size,
 };
 ---
 
 <header>
-  <Image {...imageProps} />
+  <button class="refresh-artwork">
+    <div class="refresh-wrap">
+      <Refresh className="refresh-icon" />
+    </div>
+    <Image {...imageProps} className="image" />
+  </button>
   <div class="wrap-details">
     <div class="details">
       <div class="wrap-name">
@@ -36,7 +40,7 @@ let imageProps = {
       </div>
     </div>
     <div class="wrap-logo">
-      <div class="logo"><Logo /></div>
+      <div class="logo"><Spotify /></div>
     </div>
   </div>
 </header>
@@ -50,9 +54,42 @@ let imageProps = {
     display: grid;
   }
 
+  .refresh-artwork {
+    align-items: center;
+    display: grid;
+
+    .refresh-icon {
+      transform: rotate(0deg) scale(1);
+      transition: transform 200ms;
+    }
+
+    @include focus {
+      outline: transparent;
+
+      .refresh-wrap {
+        opacity: 1;
+      }
+    }
+  }
+
+  .refresh-artwork:active .refresh-icon {
+    transform: rotate(90deg) scale(0.9);
+  }
+
+  .refresh-wrap {
+    background-color: rgba(black, 0.8);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    grid-area: 1/1;
+    display: grid;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+  }
+
   .image {
-    line-height: $line-height-md;
-    font-size: $font-size-alt;
+    grid-area: 1/1;
   }
 
   .wrap-details {

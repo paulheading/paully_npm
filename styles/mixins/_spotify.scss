@@ -12,6 +12,7 @@
 
   @include focus {
     background-color: $c-lemon;
+    outline: transparent;
     color: black;
   }
 }
