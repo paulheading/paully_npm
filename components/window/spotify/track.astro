@@ -1,16 +1,14 @@
 ---
-let { track, number, url } = Astro.props;
+import Link from "#components/window/spotify/link";
+
+let { url, name, artist, number } = Astro.props;
 ---
 
 <div class="container">
   <div class="number">{number}</div>
   <div class="details">
-    <div class="wrap-track-name">
-      <a href={url} class="track-name">{track.name}</a>
-    </div>
-    <div class="wrap-artist-name">
-      <a href={track.artist.url} class="artist-name">{track.artist.name}</a>
-    </div>
+    <Link href={url} className="wrap-track-name">{name}</Link>
+    <Link href={artist.url} className="wrap-artist-name">{artist.name}</Link>
   </div>
 </div>
 

@@ -1,0 +1,29 @@
+---
+let { href, className } = Astro.props;
+---
+
+<div class={className}>
+  {
+    href ? (
+      <a href={href}>
+        <slot />
+      </a>
+    ) : (
+      <span>
+        <slot />
+      </span>
+    )
+  }
+</div>
+
+<style lang="scss">
+  @use "#styles/mixins" as *;
+
+  a {
+    @include track_name;
+  }
+
+  span {
+    @include track_name(false);
+  }
+</style>

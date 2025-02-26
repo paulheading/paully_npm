@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { Spotify, Refresh } from "#svgs";
+import Link from "#components/window/spotify/link";
 
 let { year, content } = Astro.props;
 
@@ -24,20 +25,10 @@ let imageProps = {
   </button>
   <div class="wrap-details">
     <div class="details">
-      <div class="wrap-name">
-        {
-          content.url ? (
-            <a href={content.url} class="name">
-              {content.name}
-            </a>
-          ) : (
-            <span class="name">{content.name}</span>
-          )
-        }
-      </div>
-      <div class="wrap-owner">
-        <a href={content.owner.url} class="owner">{content.owner.name}</a>
-      </div>
+      <Link href={content.url} className="wrap-name">{content.name}</Link>
+      <Link href={content.owner.url} className="wrap-owner">
+        {content.owner.name}
+      </Link>
     </div>
     <div class="wrap-logo">
       <div class="logo"><Spotify /></div>
@@ -115,7 +106,6 @@ let imageProps = {
     font-size: 0;
   }
 
-  .name,
   .owner {
     @include track_name;
   }

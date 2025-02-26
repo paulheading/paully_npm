@@ -2,7 +2,7 @@
 @use "../mixins/typography" as *;
 @use "../mixins/focus" as *;
 
-@mixin track_name {
+@mixin track_name($focusable: true) {
   @include text-overflow;
   display: inline-block;
   font-size: 1.125rem;
@@ -10,9 +10,15 @@
   padding: 0.5rem;
   line-height: 1;
 
-  @include focus {
-    background-color: $c-lemon;
-    outline: transparent;
-    color: black;
+  @if $focusable {
+    @include focus {
+      background-color: $c-lemon;
+      outline: transparent;
+      color: black;
+    }
+  }
+
+  @else {
+    cursor: default;
   }
 }

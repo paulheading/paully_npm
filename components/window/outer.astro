@@ -4,7 +4,7 @@ import Skiplink from "#components/skiplink";
 let { settings, className, style = {}, width } = Astro.props;
 
 const outerProps = {
-  "class:list": ["outer-window", className],
+  "class:list": ["outer-window", "linked", className],
   "data-label": settings.label,
   "data-name": settings.name,
   style,

@@ -1,15 +1,17 @@
 ---
 import Track from "#components/window/spotify/track";
 
-let { tracks, url } = Astro.props;
+let { tracks } = Astro.props;
 ---
 
 <main>
   {
     tracks.map(function (track, index) {
+      let { name, url, artist } = track;
       let props = {
         number: index + 1,
-        track,
+        artist,
+        name,
         url,
       };
       return <Track {...props} />;
