@@ -1,12 +1,15 @@
 ---
+import { mapObjectToProps } from "#helpers";
+
 let { className, style, data, disabled } = Astro.props;
 
 let props = {
   class: className,
   disabled,
   style,
-  data,
 };
+
+props = mapObjectToProps({ data, props });
 ---
 
 <button {...props}>

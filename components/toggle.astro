@@ -1,4 +1,6 @@
 ---
+import { mapObjectToProps } from "#helpers";
+
 let {
   color_background = "grey",
   color_foreground = "white",
@@ -7,6 +9,7 @@ let {
   checked = false,
   className,
   color = "",
+  data,
 } = Astro.props;
 
 let vars = {
@@ -21,6 +24,8 @@ let props = {
   checked,
   color,
 };
+
+props = mapObjectToProps({ data, props });
 ---
 
 <label class={className}>
