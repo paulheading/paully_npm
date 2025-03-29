@@ -1,8 +1,16 @@
 ---
-let { className } = Astro.props;
+import { mapObjectToProps } from "#helpers";
+
+let { className, data } = Astro.props;
+
+let props = {
+  "class:list": ["banner-container", className],
+};
+
+props = mapObjectToProps({ data, props });
 ---
 
-<div class:list={["banner-container", className]}>
+<div {...props}>
   <slot />
 </div>
 

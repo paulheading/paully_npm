@@ -4,6 +4,7 @@
 @use "size" as *;
 
 @mixin core-button {
+  font-weight: inherit;
   font-size: inherit;
   border: 1px solid;
   cursor: pointer;
