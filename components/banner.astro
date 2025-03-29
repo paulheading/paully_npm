@@ -1,10 +1,10 @@
 ---
 import { mapObjectToProps } from "#helpers";
 
-let { className, data } = Astro.props;
+let { data } = Astro.props;
 
 let props = {
-  "class:list": ["banner-container", className],
+  "class:list": ["banner-container"],
 };
 
 props = mapObjectToProps({ data, props });
