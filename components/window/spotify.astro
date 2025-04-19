@@ -6,24 +6,30 @@ import Main from "#components/window/spotify/main";
 
 let { settings, content } = Astro.props;
 
+let { url, owner, name, tracks } = content;
+
 let outerProps = {
   className: "outer",
   settings,
 };
 
 let headerProps = {
-  year: settings.name,
-  content,
+  url,
+  owner,
+  name,
 };
 
 let mainProps = {
-  tracks: content.tracks,
+  tracks,
 };
 ---
 
 <WindowOuter {...outerProps}>
   <WindowInner className="inner">
-    <Header {...headerProps} />
+    <header>
+      <slot />
+      <Header {...headerProps} />
+    </header>
     <Main {...mainProps} />
   </WindowInner>
 </WindowOuter>
@@ -39,5 +45,11 @@ let mainProps = {
   .inner {
     background-color: black;
     color: white;
+  }
+
+  header {
+    grid-template-columns: toRem(80) toRem(176);
+    background-color: #222b1b;
+    display: grid;
   }
 </style>

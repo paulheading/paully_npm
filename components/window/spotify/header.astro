@@ -1,87 +1,24 @@
 ---
-import { Image } from "astro:assets";
-import { Spotify, Refresh } from "#svgs";
+import { Spotify } from "#svgs";
 import Link from "#components/window/spotify/link";
 
-let { year, content } = Astro.props;
-
-const size = 80;
-
-let imageProps = {
-  alt: `Artwork for my ${year} playlist.`,
-  src: content.thumbnail,
-  format: "webp",
-  height: size,
-  width: size,
-};
+let { url, owner, name } = Astro.props;
 ---
 
-<header>
-  <button class="refresh-artwork">
-    <div class="refresh-wrap">
-      <Refresh className="refresh-icon" />
-    </div>
-    <Image {...imageProps} className="image" />
-  </button>
-  <div class="wrap-details">
-    <div class="details">
-      <Link href={content.url} className="wrap-name">{content.name}</Link>
-      <Link href={content.owner.url} className="wrap-owner">
-        {content.owner.name}
-      </Link>
-    </div>
-    <div class="wrap-logo">
-      <div class="logo"><Spotify /></div>
-    </div>
+<div class="wrap-details">
+  <div class="details">
+    <Link href={url} className="wrap-name">{name}</Link>
+    <Link href={owner.url} className="wrap-owner">
+      {owner.name}
+    </Link>
   </div>
-</header>
+  <div class="wrap-logo">
+    <div class="logo"><Spotify /></div>
+  </div>
+</div>
 
 <style lang="scss">
   @use "#styles/mixins" as *;
-
-  header {
-    grid-template-columns: toRem(80) toRem(176);
-    background-color: #222b1b;
-    display: grid;
-  }
-
-  .refresh-artwork {
-    align-items: center;
-    display: grid;
-
-    .refresh-icon {
-      transform: rotate(0deg) scale(1);
-      transition: transform 200ms;
-    }
-
-    @include focus {
-      outline: transparent;
-
-      .refresh-wrap {
-        opacity: 1;
-      }
-    }
-  }
-
-  .refresh-artwork:active .refresh-icon {
-    transform: rotate(90deg) scale(0.9);
-  }
-
-  .refresh-wrap {
-    background-color: rgba(black, 0.8);
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    grid-area: 1/1;
-    display: grid;
-    height: 100%;
-    z-index: 2;
-    opacity: 0;
-  }
-
-  .image {
-    grid-area: 1/1;
-  }
 
   .wrap-details {
     grid-template-columns: toRem(132) toRem(24);
