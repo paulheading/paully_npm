@@ -5,7 +5,7 @@ export default function ({ label = "data", data, props }) {
 
   let entries = {};
 
-  let prefixEntry = ([key, val]) => (entries[label + "_" + key] = val);
+  let prefixEntry = ([key, val]) => (entries[label + "-" + key] = val);
 
   Object.entries(data).forEach(prefixEntry);
 
