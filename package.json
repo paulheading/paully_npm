@@ -1,6 +1,6 @@
 {
   "name": "paully",
-  "version": "9.5.9",
+  "version": "9.5.10",
   "description": "npm reset for paully websites",
   "main": "index.js",
   "scripts": {
