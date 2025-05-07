@@ -1,5 +1,3 @@
-@forward "functions/colors";
-
 @function toRem($value) {
   @return ($value * 0.0625)+rem;
 }

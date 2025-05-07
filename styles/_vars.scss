@@ -9,3 +9,14 @@
 @forward "vars/padding";
 @forward "vars/sizes";
 @forward "vars/widths";
+
+@use "vars/colors" as *;
+
+$colors: (
+  "blue": $c-blue,
+  "cyan": $c-cyan,
+  "purple": $c-indigo,
+  "pink": $c-pink,
+  "red": $c-red,
+  "orange": $c-orange,
+);

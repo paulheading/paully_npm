@@ -1,49 +1,21 @@
 ---
-import { mapObjectToProps } from "#helpers";
-
-let {
-  color_background = "grey",
-  color_foreground = "white",
-  color_checked = "green",
-  color_unchecked = "red",
-  checked = false,
-  className,
-  color = "",
-  data,
-} = Astro.props;
+let props = Astro.props;
 
 let vars = {
-  color_background,
-  color_foreground,
-  color_unchecked,
-  color_checked,
+  "color-background": "grey",
+  "color-foreground": "white",
+  "color-unchecked": "green",
+  "color-checked": "red",
 };
-
-let props = {
-  type: "checkbox",
-  checked,
-  color,
-};
-
-props = mapObjectToProps({ data, props });
 ---
 
-<label class={className}>
-  <input {...props} />
+<label class="toggle">
+  <input type="checkbox" {...props.data} />
   <span></span>
 </label>
 
 <style lang="scss" define:vars={vars}>
   @use "#styles/mixins" as *;
-
-  $colors: (
-    "blue": $c-blue,
-    "cyan": $c-cyan,
-    "purple": $c-indigo,
-    "pink": $c-pink,
-    "red": $c-red,
-    "orange": $c-orange,
-  );
 
   label {
     height: $height-switch;
@@ -54,55 +26,55 @@ props = mapObjectToProps({ data, props });
 
   label.selected-state {
     span {
-      background-color: var(--color_foreground);
+      background-color: var(--color-foreground);
     }
 
     span:before {
-      background-color: var(--color_unchecked);
+      background-color: var(--color-unchecked);
     }
 
     input {
       @include focus {
-        @include dashed-box(var(--color_foreground));
+        @include dashed-box(var(--color-foreground));
       }
     }
 
     input:checked + span {
-      background-color: var(--color_foreground);
+      background-color: var(--color-foreground);
     }
 
     input:checked + span:before {
-      background-color: var(--color_checked);
+      background-color: var(--color-checked);
     }
   }
 
   label:not(.selected-state) {
     span {
-      background-color: var(--color_background);
+      background-color: var(--color-background);
     }
 
     span:before {
-      background-color: var(--color_foreground);
+      background-color: var(--color-foreground);
     }
 
     input:not(:checked) {
       @include focus {
-        @include dashed-box(var(--color_background));
+        @include dashed-box(var(--color-background));
       }
     }
 
     input:checked {
       @include focus {
-        @include dashed-box(var(--color_checked));
+        @include dashed-box(var(--color-checked));
       }
     }
 
     input:checked + span {
-      background-color: var(--color_checked);
+      background-color: var(--color-checked);
     }
 
     @each $name, $value in $colors {
-      input[color="#{$name}"] {
+      input[type="checkbox"][data-color="#{$name}"] {
         &:checked {
           @include focus {
             @include dashed-box($value);

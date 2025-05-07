@@ -9,22 +9,27 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./assets": "./assets/index.js",
-    "./data": "./data/index.js",
+    "./assets": "./assets.js",
+    "./data": "./data.js",
     "./functions": "./styles/functions.scss",
-    "./helpers": "./scripts/helpers/index.js",
+    "./helpers": "./scripts/helpers.js",
+    "./handlers": "./scripts/handlers.js",
+    "./selectors": "./scripts/selectors.js",
+    "./listeners": "./scripts/listeners.js",
     "./mixins": "./styles/mixins.scss",
     "./styles": "./styles/global.scss",
-    "./svgs": "./svgs/index.js",
+    "./svgs": "./svgs.js",
     "./vars": "./styles/vars.scss"
   },
   "imports": {
-    "#assets": "./assets/index.js",
-    "#svgs": "./svgs/index.js",
-    "#helpers": "./scripts/helpers/index.js",
-    "#data": "./data/index.js",
+    "#assets": "./assets.js",
+    "#svgs": "./svgs.js",
+    "#helpers": "./scripts/helpers.js",
+    "#selectors": "./scripts/selectors.js",
+    "#data": "./data.js",
     "#components/*": "./components/*.astro",
     "#styles/*": "./styles/*.scss",
+    "#scripts/*": "./scripts/*.js",
     "#svgs/*": "./svgs/*.astro"
   },
   "files": [
@@ -34,8 +39,7 @@
     "assets",
     "scripts",
     "styles",
-    "svgs",
-    "test"
+    "svgs"
   ],
   "repository": {
     "type": "git",

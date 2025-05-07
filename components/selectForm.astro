@@ -1,0 +1,19 @@
+---
+import SelectFormForm from "#components/selectForm/form";
+import SelectFormButton from "#components/selectForm/button";
+import SelectFormAnnouncement from "#components/selectForm/announcement";
+import SelectFormList from "#components/selectForm/List";
+
+let { title, value, options, data } = Astro.props;
+
+let buttonProps = {
+  title,
+  value,
+};
+---
+
+<SelectFormForm {...data}>
+  <SelectFormButton {...buttonProps} />
+  <SelectFormList options={options} />
+  <SelectFormAnnouncement />
+</SelectFormForm>

@@ -1,0 +1,76 @@
+---
+let { setting } = Astro.props;
+let { data, value, min, max } = setting;
+
+let props = {
+  ...data,
+  value,
+  min,
+  max,
+};
+---
+
+<div class="container">
+  <input type="range" {...props} />
+</div>
+
+<style lang="scss">
+  @use "~mixins" as *;
+
+  $size-range-thumb: 1rem;
+
+  @mixin thumb {
+    @include size($size-range-thumb);
+
+    & {
+      border-radius: $size-range-thumb;
+      background-color: white;
+      border: 2px solid black;
+      -webkit-appearance: none;
+      position: relative;
+      appearance: none;
+      z-index: 2;
+    }
+  }
+
+  .container {
+    padding-bottom: toRem(8);
+    padding-top: toRem(8);
+  }
+
+  input[type="range"] {
+    background-color: black;
+    height: toRem(2);
+    cursor: pointer;
+    display: block;
+    margin: 0;
+
+    @include focus {
+      outline: none;
+
+      &::-webkit-slider-thumb {
+        background-color: grey;
+      }
+    }
+  }
+
+  input[type="range"] {
+    &::-moz-range-thumb {
+      @include thumb;
+    }
+    &::-webkit-slider-thumb {
+      @include thumb;
+    }
+  }
+
+  @each $name, $value in $colors {
+    input[type="range"][data-color="#{$name}"] {
+      &.active::-webkit-slider-thumb {
+        background-color: $value;
+      }
+      &.active::-moz-range-thumb {
+        background-color: $value;
+      }
+    }
+  }
+</style>

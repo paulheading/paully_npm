@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $c-gray-1: #f8f9fa;
 $c-gray-2: #e9ecef;
 $c-gray-3: #dee2e6;
@@ -7,3 +9,11 @@ $c-gray-6: #6c757d;
 $c-gray-7: #495057;
 $c-gray-8: #343a40;
 $c-gray-9: #212529;
+
+$color-code: #d0d0d0;
+
+$color-code--background: #181818;
+
+$c-body-bg: $c-gray-2;
+
+$c-body-banner: color.adjust($c-body-bg, $lightness: -15%);

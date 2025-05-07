@@ -1,29 +1,22 @@
-@use "../../functions" as *;
-@use "grays" as *;
+@use "sass:color";
 
-$c-blue: hsl(211, 100%, 50%);
+$c-blue: #007bff;
 $c-cyan: #17a2b8;
-$c-sky: hsl(203, 92%, 75%);
+$c-sky: #85cdfa;
 
 $c-indigo: #6610f2;
 $c-purple: #6f42c1;
 $c-pink: #e93f8e;
-$c-red: rgb(220, 56, 72);
-$c-darkred: darken($c-red, 10%);
+$c-red: #dc3848;
+$c-darkred: color.adjust($c-red, $lightness: -10%);
 
 $c-orange: #fd7e14;
-$c-yellow: hsl(45, 100%, 51%);
+$c-yellow: #ffc105;
 $c-gold: #f5c356;
 $c-lemon: lightgoldenrodyellow;
 
 $c-green: #29a847;
 $c-teal: #20c997;
-$c-teal--dark: darken($c-teal, 10%);
-$c-teal--xdark: darken($c-teal, 20%);
-$c-teal--xxdark: darken($c-teal, 35%);
-
-$c-body-bg: $c-gray-2;
-$c-body-banner: darken($c-body-bg, 15%);
-
-$color-code: #d0d0d0;
-$color-code--background: #181818;
+$c-teal--dark: color.adjust($c-teal, $lightness: -10%);
+$c-teal--xdark: color.adjust($c-teal, $lightness: -20%);
+$c-teal--xxdark: color.adjust($c-teal, $lightness: -35%);
