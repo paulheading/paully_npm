@@ -1,7 +1,7 @@
-import attrs from "#scripts/selectors/attrs";
-import cnames from "#scripts/selectors/cnames";
-import selectForm from "#scripts/selectors/selectForm";
-import query from "#scripts/selectors/queries";
+import attrs from "#selectors/attrs";
+import cnames from "#selectors/cnames";
+import selectForm from "#selectors/selectForm";
+import query from "#selectors/queries";
 
 export { attrs, cnames };
 

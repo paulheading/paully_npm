@@ -1,3 +1,3 @@
-import listenDocument from "#scripts/listeners/listenDocument";
+import listenDocument from "#listeners/listenDocument";
 
 export { listenDocument };

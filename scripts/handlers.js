@@ -1,3 +1,3 @@
-import handleSelectForm from "#scripts/handlers/handleSelectForm";
+import handleSelectForm from "#handlers/handleSelectForm";
 
 export { handleSelectForm };

@@ -1,8 +1,8 @@
-import calc from "#scripts/helpers/calc";
-import contains from "#scripts/helpers/contains";
-import create from "#scripts/helpers/create";
-import get from "#scripts/helpers/get";
+import calc from "#helpers/calc";
+import contains from "#helpers/contains";
+import create from "#helpers/create";
+import get from "#helpers/get";
 
-import mapObjectToProps from "#scripts/helpers/mapObjectToProps";
+import mapObjectToProps from "#helpers/mapObjectToProps";
 
 export { calc, contains, create, get, mapObjectToProps };
