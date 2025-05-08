@@ -103,4 +103,5 @@ export default {
   handleItemClicks,
   toggleActiveItem,
   setFormButton,
+  focusOnItem,
 };

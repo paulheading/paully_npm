@@ -5,7 +5,8 @@ import handleKeyPress from "#handlers/handleKeyPress";
 import handleItemSelection from "#handlers/handleItemSelection";
 import listenDocument from "#listeners/listenDocument";
 
-let { handleItemClicks, toggleActiveItem, setFormButton } = handleItemSelection;
+let { handleItemClicks, toggleActiveItem, setFormButton, focusOnItem } =
+  handleItemSelection;
 
 function setupFormListeners($form) {
   $form.addEventListener("submit", preventDefault);
@@ -37,4 +38,5 @@ export default {
   toggleActiveItem,
   setupFormListeners,
   setFormButton,
+  focusOnItem,
 };
