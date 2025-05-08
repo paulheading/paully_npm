@@ -1,6 +1,6 @@
 ---
-import attrs from "#scripts/selectors/attrs";
-import cnames from "#scripts/selectors/cnames";
+import attrs from "#selectors/attrs";
+import cnames from "#selectors/cnames";
 
 let { aria } = attrs;
 
@@ -20,7 +20,7 @@ let buttonProps = {
 <button {...buttonProps}>{title}</button>
 
 <style lang="scss" is:global>
-  @use "#styles/mixins" as *;
+  @use "#mixins" as *;
 
   $padding-select: 0.75rem;
 

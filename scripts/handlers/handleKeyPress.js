@@ -1,8 +1,8 @@
-import $ from "#scripts/selectors";
-import cnames from "#scripts/selectors/cnames";
-import keyPress from "#scripts/helpers/keyPress";
-import handleFormState from "#scripts/handlers/handleFormState";
-import handleItemSelection from "#scripts/handlers/handleItemSelection";
+import $ from "#selectors";
+import cnames from "#selectors/cnames";
+import keyPress from "#helpers/keyPress";
+import handleFormState from "#handlers/handleFormState";
+import handleItemSelection from "#handlers/handleItemSelection";
 
 let { getCurrentItem, changeCurrentFocus, selectCurrentOption } =
   handleItemSelection;

@@ -1,9 +1,9 @@
-import $ from "#scripts/selectors";
-import preventDefault from "#scripts/helpers/preventDefault";
-import handleFormState from "#scripts/handlers/handleFormState";
-import handleKeyPress from "#scripts/handlers/handleKeyPress";
-import handleItemSelection from "#scripts/handlers/handleItemSelection";
-import listenDocument from "#scripts/listeners/listenDocument";
+import $ from "#selectors";
+import preventDefault from "#helpers/preventDefault";
+import handleFormState from "#handlers/handleFormState";
+import handleKeyPress from "#handlers/handleKeyPress";
+import handleItemSelection from "#handlers/handleItemSelection";
+import listenDocument from "#listeners/listenDocument";
 
 let { handleItemClicks, toggleActiveItem, setFormButton } = handleItemSelection;
 

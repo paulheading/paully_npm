@@ -1,5 +1,5 @@
 ---
-import cnames from "#scripts/selectors/cnames";
+import cnames from "#selectors/cnames";
 
 let { data, index } = Astro.props;
 
@@ -13,7 +13,7 @@ let props = {
 <li {...props}><slot /></li>
 
 <style lang="scss" is:global>
-  @use "#styles/mixins" as *;
+  @use "#mixins" as *;
 
   $padding-select: 0.75rem;
 

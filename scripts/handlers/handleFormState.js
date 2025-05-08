@@ -1,6 +1,6 @@
-import $ from "#scripts/selectors";
-import attrs from "#scripts/selectors/attrs";
-import cnames from "#scripts/selectors/cnames";
+import $ from "#selectors";
+import attrs from "#selectors/attrs";
+import cnames from "#selectors/cnames";
 
 function close($form) {
   let { $button } = $.selectForm.selectors($form);

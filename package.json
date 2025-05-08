@@ -31,9 +31,11 @@
     "#helpers": "./scripts/helpers.js",
     "#helpers/*": "./scripts/helpers/*.js",
     "#listeners/*": "./scripts/listeners/*.js",
+    "#mixins": "./styles/mixins.scss",
     "#scripts/*": "./scripts/*.js",
-    "#selectors/*": "./scripts/selectors/*.js",
     "#styles/*": "./styles/*.scss",
+    "#selectors": "./scripts/selectors.js",
+    "#selectors/*": "./scripts/selectors/*.js",
     "#svgs": "./svgs/index.js",
     "#svgs/*": "./svgs/*.astro"
   },

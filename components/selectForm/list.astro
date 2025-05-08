@@ -1,6 +1,6 @@
 ---
 import SelectFormItem from "#components/selectForm/item";
-import cnames from "#scripts/selectors/cnames";
+import cnames from "#selectors/cnames";
 
 let { options } = Astro.props;
 
@@ -24,7 +24,7 @@ let props = {
 </ul>
 
 <style lang="scss" is:global>
-  @use "#styles/mixins" as *;
+  @use "#mixins" as *;
 
   $background-color-select: white;
 

@@ -1,7 +1,7 @@
-import $ from "#scripts/selectors";
-import cnames from "#scripts/selectors/cnames";
-import attrs from "#scripts/selectors/attrs";
-import handleFormState from "#scripts/handlers/handleFormState";
+import $ from "#selectors";
+import cnames from "#selectors/cnames";
+import attrs from "#selectors/attrs";
+import handleFormState from "#handlers/handleFormState";
 
 function getCurrentItem($items, callback) {
   $items.forEach(function ($item, index) {

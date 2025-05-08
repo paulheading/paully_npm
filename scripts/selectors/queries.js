@@ -1,5 +1,5 @@
-import attrs from "#scripts/selectors/attrs";
-import cnames from "#scripts/selectors/cnames";
+import attrs from "#selectors/attrs";
+import cnames from "#selectors/cnames";
 
 let query = {};
 
